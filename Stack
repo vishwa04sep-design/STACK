@@ -1,0 +1,66 @@
+import java.util.*;
+public class NewTest {
+
+	public static void main(String[] args) {
+			Scanner sc=new Scanner (System.in);
+			int n=sc.nextInt();
+			Stack stack=new Stack(n);
+			stack.push(2);
+			stack.push(4);
+			stack.push(6);
+			stack.push(8);
+			System.out.println("POP :"+stack.pop());
+			System.out.println("POP :"+stack.pop());
+			System.out.println("POP :"+stack.pop());
+			System.out.println("PEEK :"+stack.peek());
+			System.out.println("SIZE :"+stack.size());
+			System.out.println("EMPTY :"+stack.isEmpty());                
+	}
+}
+	class Stack{
+		int n;
+		int arr[];
+		int top;
+		Stack(int n)
+		{
+			this.n=n;
+			arr=new int[n];
+			top=-1;
+		}
+		public void push(int val)
+		{
+			if(top==n-1)
+			{
+				System.out.print("Stack overflow");
+				return;
+			}
+			arr[++top]=val;
+		}
+		public int pop()
+		{
+			if(top==-1)
+			{
+				System.out.print("Stack Underflow");
+				return -1;
+			}
+			return arr[top--];
+		}
+		public int peek()
+		{
+			if(top==-1)
+			{
+				System.out.print("Stack underflow");
+			}
+			return arr[top];
+		}
+		public int size()
+		{
+			return top+1;
+		}
+		public boolean isEmpty()
+		{
+			return top==-1;
+		}
+	}          
+         
+			
